@@ -5373,11 +5373,7 @@ export function validateAuthResponse(
     })
   }
 
-  const id_token = getURLSearchParameter(parameters, 'id_token')
-  const token = getURLSearchParameter(parameters, 'token')
-  if (id_token !== undefined || token !== undefined) {
-    throw new UnsupportedOperationError('implicit and hybrid flows are not supported')
-  }
+
 
   return brand(new URLSearchParams(parameters))
 }
